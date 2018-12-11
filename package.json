@@ -1,0 +1,16 @@
+{
+  "name": "bloggerapp",
+  "version": "1.0.0",
+  "description": "Rest Server for blogger app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pranaymokal@gmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.3.15"
+  }
+}
