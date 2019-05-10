@@ -3,7 +3,7 @@ const bodyParser=require('body-parser');
 const mongoose = require('mongoose');
 const app = express();
 
-let DEV_DB = 'mongodb://root:root1234@ds127634.mlab.com:27634/mongo';
+let DEV_DB = 'mongodb://root:root123@ds127634.mlab.com:27634/mongo';
 //const mongoDB = process.env.MONGODB_URI || DEV_DB;
 
 //let DEV_DB = 'mongodb://localhost:27017/mongo';
