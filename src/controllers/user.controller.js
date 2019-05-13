@@ -34,14 +34,18 @@ exports.update = function (req, res) {
 
 exports.create=function(req,res){
     let user=new User({
-        name: req.body.name,
+        firstName: req.body.firstname,
+        lastName:req.body.lastname,
+        username:req.body.username,
         gender: req.body.gender,
+        email: req.body.email,
         password: req.body.password,
-        contact: req.body.contact
+        contact: req.body.contact,
+        dateofbirth:req.body.dateofbirth
     });
     user.save(function (err) {
         if (err) {
-            return next(err);
+            console.log(err);
         }
         res.send('User Created successfully');
     });
@@ -49,13 +53,14 @@ exports.create=function(req,res){
 
 
  exports.login = function (req, res) {
-    User.findOne({ name: req.body.name, password: req.body.password}, function(err, user){
+    User.findOne({ username: req.body.username, password: req.body.password}, function(err, user){
         if(err){
            res.send('Incorrect user name or password.');
         } else{
             if(user==null){
                 res.send('Incorrect user name or password.');
             }else{
+                user.password='';
                 res.send(user);
             }
         }
